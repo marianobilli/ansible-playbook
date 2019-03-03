@@ -1,0 +1,27 @@
+---
+- hosts: all
+  tasks:
+    - include_role:
+        name: fix_locale
+    - include_role:
+        name: add_hosts
+    - include_role:
+        name: config_network
+    - include_role:
+        name: set_hostname
+    - include_role:
+        name: install_common_packages
+    - include_role:
+        name: running_services
+
+- hosts: server
+  tasks:
+    - include_role:
+        name: config_chrony_server
+    - include_role:
+        name: ldap_server
+
+- hosts: hosts
+  tasks:
+    - include_role:
+        name: config_chrony_client

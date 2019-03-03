@@ -1,0 +1,46 @@
+---
+- name: replace default server 0 
+  become: yes
+  lineinfile: 
+    path: /etc/chrony.conf
+    regexp: '#?server 0.centos.pool.ntp.org iburst'
+    line: '#server 0.centos.pool.ntp.org iburst'
+
+- name: replace default server 1
+  become: yes
+  lineinfile:
+    path: /etc/chrony.conf
+    regexp: '#?server 1.centos.pool.ntp.org iburst'
+    line: '#server 1.centos.pool.ntp.org iburst'
+
+- name: replace default server 2
+  become: yes
+  lineinfile:
+    path: /etc/chrony.conf
+    regexp: '#?server 2.centos.pool.ntp.org iburst'
+    line: '#server 2.centos.pool.ntp.org iburst'
+
+- name: replace default server 3
+  become: yes
+  lineinfile:
+    path: /etc/chrony.conf
+    regexp: '#?server 3.centos.pool.ntp.org iburst'
+    line: '#server 3.centos.pool.ntp.org iburst'
+
+- name: Add my NTP server
+  become: yes
+  lineinfile:
+    path: /etc/chrony.conf
+    insertafter: '#?server 3.centos.pool.ntp.org iburst'
+    line: 'server server.localnet.com iburst'
+
+- name: restart chronyd
+  become: yes
+  systemd:
+    name: chronyd
+    state: restarted
+    daemon_reload: yes
+
+- name: enable ntp
+  become: yes
+  shell: timedatectl set-ntp true

@@ -1,0 +1,10 @@
+---
+- name: ensure a list of packages installed
+  become: yes
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - chrony
+    - nmap-ncat
+    - mc

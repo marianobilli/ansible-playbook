@@ -1,0 +1,7 @@
+---
+# tasks file for fix_locale
+- name: fix locale
+  become: true
+  template:
+    src: templates/environment.j2
+    dest: /etc/environment

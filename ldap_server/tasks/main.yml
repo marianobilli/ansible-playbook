@@ -1,0 +1,61 @@
+---
+
+- name: install openldap
+  become: yes
+  yum: 
+    name: "{{packages}}"
+  vars:
+    packages:
+      - openldap-clients
+      - openldap-servers
+      - oddjob-mkhomedir
+
+- name: set boolean ypbind
+  become: yes
+  shell: setsebool -P allow_ypbind=1
+
+- name: set boolean use ldap
+  become: yes
+  shell: setsebool -P authlogin_nsswitch_use_ldap=1
+
+- name: start slapd.service and oddjobd
+  become: yes
+  systemd:
+    name: "{{item}}"
+    state: started
+    enabled: yes
+  vars:
+    services: [slapd.service, oddjobd]
+  with_items: '{{services}}'
+ 
+- name: copy db.ldif
+  become: yes
+  template: 
+    src: templates/db.ldif.j2 
+    dest: /tmp/db.ldif
+
+- name: import db.ldif
+  become: yes
+  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/db.ldif
+
+- name: remove db.ldif
+  become: yes
+  file:
+    state: absent
+    path: /tmp/db.ldif
+
+- name: copy monitor.ldif
+  become: yes
+  template:
+    src: templates/monitor.ldif.j2
+    dest: /tmp/monitor.ldif
+
+- name: import monitor.ldif
+  become: yes
+  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/monitor.ldif
+
+- name: remove monitor.ldif
+  become: yes
+  file:
+    state: absent
+    path: /tmp/monitor.ldif 

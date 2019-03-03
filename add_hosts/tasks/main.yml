@@ -1,0 +1,14 @@
+---
+# tasks file for add_hosts
+- name: add server
+  become: yes
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.1.200 server.localnet.com server'
+    create: yes
+
+- name: add hosts
+  become: yes
+  lineinfile:
+    path: /etc/hosts
+    line: '192.168.1.201 host1.localnet.com host1'

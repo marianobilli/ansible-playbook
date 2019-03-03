@@ -1,0 +1,7 @@
+---
+- name: chronyd
+  systemd:
+    state: started
+    enabled: yes
+    name: chronyd
+

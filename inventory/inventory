@@ -1,0 +1,13 @@
+[all]
+server ip_address=192.168.1.200
+host1  ip_address=192.168.1.201
+
+[servers]
+server
+
+[hosts]
+host1
+
+[all:vars]
+gateway=192.168.1.1
+

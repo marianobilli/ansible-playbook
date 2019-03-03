@@ -1,0 +1,23 @@
+---
+- name: chrony - allow connections from local network (replace)
+  become: yes
+  lineinfile:
+    path: /etc/chrony.conf
+    regexp: '#?allow 192\.168\.\d\.\d\/\d\d'
+    line: 'allow 192.168.1.0/24'
+
+- name: open firewall for ntp
+  become: yes
+  firewalld:
+    service: ntp
+    zone: public
+    permanent: yes
+    immediate: yes
+    state: enabled  
+
+- name: restart chronyd
+  become: yes
+  systemd:
+    name: chronyd
+    state: restarted
+    daemon_reload: yes
