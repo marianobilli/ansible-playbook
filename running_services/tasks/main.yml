@@ -5,3 +5,9 @@
     enabled: yes
     name: chronyd
 
+- name: acpid
+  systemd:
+    state: started
+    enabled: yes
+    name: acpid.service
+

@@ -1,0 +1,7 @@
+
+plugin: virtualbox
+settings_password_file: /etc/virtulbox/secrets
+running_only: yes
+groups:
+  server: "'server' in vbox_type"
+  clients: "'client' in vbox_type"

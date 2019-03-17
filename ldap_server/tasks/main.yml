@@ -1,6 +1,6 @@
 ---
 
-- name: install openldap
+- name: install openldap required packages
   become: yes
   yum: 
     name: "{{packages}}"
@@ -8,7 +8,24 @@
     packages:
       - openldap-clients
       - openldap-servers
+      - openldap-devel
       - oddjob-mkhomedir
+      - python2
+      - python2-pip
+      - python-setuptools
+      - python-devel
+
+- name: upgrade pip
+  become: yes
+  shell: pip install --upgrade pip
+
+- name: pip ldap package
+  become: yes
+  pip:
+    name: "{{pip_packages}}"
+  vars:
+    pip_packages:
+      - python-ldap
 
 - name: set boolean ypbind
   become: yes
@@ -27,35 +44,91 @@
   vars:
     services: [slapd.service, oddjobd]
   with_items: '{{services}}'
+
+- name: Make sure we have a parent entry for users
+  ldap_entry:
+    dn: ou=users,dc=marianobilli,dc=com
+    objectClass: organizationalUnit
+
+- name: Make sure we have an admin user
+  ldap_entry:
+    dn: cn=admin,dc=marianobilli,dc=com
+    objectClass:
+      - simpleSecurityObject
+      - organizationalRole
+    attributes:
+      description: An LDAP administrator
+      userPassword: "admin"
  
-- name: copy db.ldif
-  become: yes
-  template: 
-    src: templates/db.ldif.j2 
-    dest: /tmp/db.ldif
-
-- name: import db.ldif
-  become: yes
-  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/db.ldif
-
-- name: remove db.ldif
-  become: yes
-  file:
-    state: absent
-    path: /tmp/db.ldif
-
-- name: copy monitor.ldif
-  become: yes
-  template:
-    src: templates/monitor.ldif.j2
-    dest: /tmp/monitor.ldif
-
-- name: import monitor.ldif
-  become: yes
-  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/monitor.ldif
-
-- name: remove monitor.ldif
-  become: yes
-  file:
-    state: absent
-    path: /tmp/monitor.ldif 
+#- name: copy db.ldif
+#  become: yes
+#  template:
+#    src: templates/db.ldif.j2
+#    dest: /tmp/db.ldif
+#
+#- name: import db.ldif
+#  become: yes
+#  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/db.ldif
+#
+#- name: remove db.ldif
+#  become: yes
+#  file:
+#    state: absent
+#    path: /tmp/db.ldif
+#
+#- name: copy monitor.ldif
+#  become: yes
+#  template:
+#    src: templates/monitor.ldif.j2
+#    dest: /tmp/monitor.ldif
+#
+#- name: import monitor.ldif
+#  become: yes
+#  shell: ldapmodify -Y EXTERNAL -H ldapi:// -f /tmp/monitor.ldif
+#
+#- name: remove monitor.ldif
+#  become: yes
+#  file:
+#    state: absent
+#    path: /tmp/monitor.ldif
+#
+#- name: copy DB config file from example
+#  become: yes
+#  copy:
+#   src: /usr/share/openldap-servers/DB_CONFIG.example
+#   dest: /var/lib/ldap/DB_CONFIG
+#   remote_src: yes
+#
+#- name: /var/lib/ldap ownership to ldap user
+#  become: yes
+#  file:
+#   path: /var/lib/ldap
+#   owner: ldap
+#   group: ldap
+#
+#- name: add schemas
+#  become: yes
+#  shell: ldapadd -Y EXTERNAL  -H ldapi:// -f /etc/openldap/schema/{{item}}
+#  with_items: '{{schemas}}'
+#  vars:
+#    schemas:
+#      - cosine.ldif
+#      - nis.ldif
+#      - inetorgperson.ldif
+#  ignore_errors: yes
+#
+#- name: copy base.ldif to tmp
+#  become: yes
+#  copy:
+#    src: ldap_server/files/base.ldif
+#    dest: /tmp/base.ldif
+#
+#- name: set base.ldif
+#  become: yes
+#  shell: ldapadd -Y EXTERNAL -H ldapapi:// if /tmp/base.ldif
+#  ignore_errors: yes
+#
+#- name: remove base.ldif from tmp
+#  file:
+#    path: /tmp/base.ldif
+#    state: absent

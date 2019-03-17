@@ -1,12 +1,11 @@
 ---
 - hosts: all
+  become: yes
   tasks:
     - include_role:
         name: fix_locale
     - include_role:
         name: add_hosts
-    - include_role:
-        name: config_network
     - include_role:
         name: set_hostname
     - include_role:
@@ -21,7 +20,7 @@
     - include_role:
         name: ldap_server
 
-- hosts: hosts
+- hosts: clients
   tasks:
     - include_role:
         name: config_chrony_client
