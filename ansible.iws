@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df8f4db-9941-45b8-88cd-3c0e6a3b9cad" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ansible.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/ansible.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/defaults/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/handlers/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/meta/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/tasks/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/templates/ifcfg-enp0s3.j2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/tests/inventory" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/tests/test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config_network/vars/main.yml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_client/templates/consul.conf.j2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/defaults/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/handlers/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/meta/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/tasks/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/tests/inventory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/tests/test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_common/vars/main.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consul_server/templates/consul.conf.j2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ansible.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ansible.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/install_common_packages/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/install_common_packages/tasks/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ldap_server/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ldap_server/tasks/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play.retry" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/play.yml" beforeDir="false" afterPath="$PROJECT_DIR$/play.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/running_services/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/running_services/tasks/main.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,38 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="play.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="play.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/play.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ldap_server/tasks/main.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vbox.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vbox.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="420">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install_common_packages/tasks/main.yml">
+        <entry file="file://$PROJECT_DIR$/consul_common/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="255">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -78,11 +58,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/running_services/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/play.yml" />
         <option value="$PROJECT_DIR$/ansible.cfg" />
         <option value="$PROJECT_DIR$/vbox.yml" />
-        <option value="$PROJECT_DIR$/install_common_packages/tasks/main.yml" />
         <option value="$PROJECT_DIR$/ldap_server/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/install_common_packages/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/consul/files/consul.conf" />
+        <option value="$PROJECT_DIR$/consul/templates/consul.conf.j2" />
+        <option value="$PROJECT_DIR$/consul/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/consul_server/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/consul_client/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/consul_common/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/play.yml" />
       </list>
     </option>
   </component>
@@ -107,12 +93,51 @@
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
               <item name="ansible" type="462c0819:PsiDirectoryNode" />
-              <item name="ldap_server" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
               <item name="ansible" type="462c0819:PsiDirectoryNode" />
-              <item name="ldap_server" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_client" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_common" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_server" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="consul_server" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="fix_locale" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ansible" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="fix_locale" type="462c0819:PsiDirectoryNode" />
               <item name="tasks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -121,6 +146,17 @@
       </pane>
       <pane id="PackagesPane" />
     </panes>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/consul_server/templates" />
+      <recent name="$PROJECT_DIR$/files" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/consul/templates" />
+      <recent name="$PROJECT_DIR$/consul/files" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -193,30 +229,30 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24027778" />
-      <window_info id="Learn" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
+      <window_info id="Learn" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -258,13 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/play.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ldap_server/templates/db.ldif.j2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -279,24 +308,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/files/krb5.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/consul_1.4.3_linux_amd64.zip">
+      <provider selected="true" editor-type-id="apk-viewer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/vbox.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play.retry">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ldap_server/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/install_common_packages/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ldap_server/tasks/main.yml">
+    <entry file="file://$PROJECT_DIR$/consul/files/consul.conf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_server/templates/consul.conf.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fix_locale/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_client/templates/consul.conf.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_client/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_server/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_common/meta/main.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consul_common/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/play.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>

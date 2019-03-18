@@ -1,0 +1,18 @@
+---
+- name: copy bin file
+  copy:
+    src: files/consul
+    dest: /usr/bin
+    mode: 0755
+
+- name: create data directory
+  file:
+    path: /opt/consul
+    state: directory
+    mode: 0755
+
+- name: create conf directory
+  file:
+    path: /etc/consul
+    state: directory
+    mode: 0755

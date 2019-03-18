@@ -1,0 +1,8 @@
+---
+- name: copy conf file
+  template:
+    src: templates/consul.conf.j2
+    dest: /etc/consul/consul.conf
+
+- name: start consul client
+  shell: consul agent -config-file=/etc/consul/consul.conf

@@ -12,15 +12,23 @@
         name: install_common_packages
     - include_role:
         name: running_services
+    - include_role:
+        name: consul_common
 
 - hosts: server
+  become: yes
   tasks:
     - include_role:
         name: config_chrony_server
+#    - include_role:
+#        name: ldap_server
     - include_role:
-        name: ldap_server
+        name: consul_server
 
 - hosts: clients
+  become: yes
   tasks:
     - include_role:
         name: config_chrony_client
+    - include_role:
+        name: conlul_client
