@@ -1,6 +1,6 @@
 
 plugin: virtualbox
-settings_password_file: /etc/virtulbox/secrets
+settings_password_file: /etc/virtualbox/secrets
 running_only: yes
 groups:
   server: "'server' in vbox_type"
