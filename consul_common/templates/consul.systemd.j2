@@ -8,9 +8,9 @@ Environment="GOMAXPROCS=`nproc`"
 Restart=on-failure
 User=consul
 Group=consul
-ExecStart=/usr/local/bin/consul agent -config-dir /etc/consul -config-file=/etc/consul/consul.conf -data-dir /opt/consul
+ExecStart=/usr/local/bin/consul agent -config-file=/etc/consul/consul.json -data-dir=/opt/consul
 ExecReload=/bin/kill -HUP $MAINPID
-KillSignal=SIGINT
+KillSignal = SIGINT
 
 [Install]
 WantedBy=multi-user.target

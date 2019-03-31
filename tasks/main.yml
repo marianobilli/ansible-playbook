@@ -1,0 +1,22 @@
+---
+- include: pkg-debian.yml
+  when: ansible_os_family == "Debian"
+
+- include: pkg-redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- include: pkg-suse.yml
+  when: ansible_os_family == "Suse"
+
+- include: pkg-windows.yml
+  when: ansible_os_family == "Windows"
+
+- include: agent5-linux.yml
+  when: datadog_agent5 and ansible_os_family != "Windows"
+
+- include: agent6-linux.yml
+  when: not datadog_agent5 and ansible_os_family != "Windows"
+
+- include: agent6-win.yml
+  when: not datadog_agent5 and ansible_os_family == "Windows"
+

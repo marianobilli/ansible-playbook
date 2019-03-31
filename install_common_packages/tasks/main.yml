@@ -10,4 +10,5 @@
     - mc
     - acpid
     - unzip
+    - bind-utils
 

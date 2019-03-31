@@ -5,10 +5,25 @@
     dest: /usr/bin
     mode: 0755
 
+- name: Create consul group
+  group:
+    name: consul
+    state: present
+    system: yes
+
+- name: Create consul user
+  user:
+    home: /opt/consul
+    name: consul
+    group: consul
+    system: yes
+
 - name: create data directory
   file:
     path: /opt/consul
     state: directory
+    owner: consul
+    group: consul
     mode: 0755
 
 - name: create conf directory
@@ -16,3 +31,11 @@
     path: /etc/consul
     state: directory
     mode: 0755
+
+- name: Copy consul systemd script
+  template:
+    src: consul.systemd.j2
+    dest: /etc/systemd/system/consul.service
+    owner: root
+    group: root
+    mode: 0644

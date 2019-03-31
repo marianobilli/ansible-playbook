@@ -1,0 +1,6 @@
+---
+# tasks file for firewall
+- firewalld:
+    zone: system-default(trusted)
+    permanent: yes
+    state: enabled

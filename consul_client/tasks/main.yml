@@ -2,7 +2,12 @@
 - name: copy conf file
   template:
     src: templates/consul.conf.j2
-    dest: /etc/consul/consul.conf
+    dest: /etc/consul/consul.json
 
-- name: start consul client
-  shell: consul agent -config-file=/etc/consul/consul.conf
+- name: restart consul
+  systemd:
+    name: consul
+    daemon_reload: yes
+    enabled: yes
+    masked: no
+    state: restarted

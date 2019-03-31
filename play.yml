@@ -14,6 +14,10 @@
         name: running_services
     - include_role:
         name: consul_common
+    - include_role:
+        name: iptables
+    - include_role:
+        name: firewall
 
 - hosts: server
   become: yes
@@ -31,4 +35,4 @@
     - include_role:
         name: config_chrony_client
     - include_role:
-        name: conlul_client
+        name: consul_client

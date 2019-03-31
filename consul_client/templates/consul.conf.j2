@@ -1,6 +1,15 @@
 {
+  "start_join": ["192.168.1.8"],
+  "disable_remote_exec": true,
+  "domain": "billi.",
   "data_dir": "/opt/consul",
   "log_level": "INFO",
-  "node_name": {{ ansible_hostname }},
+  "node_name": "{{ ansible_hostname }}",
   "server": false,
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0",
+  "datacenter": "vbox",
+  "rejoin_after_leave": true,
+  "leave_on_terminate": true,
+  "disable_update_check": true
 }
